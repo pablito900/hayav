@@ -10,8 +10,29 @@
         style="@style/button"
         android:background="@drawable/green"
         android:text="@string/login"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="73dp"
-        android:layout_marginTop="175dp" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/PasswordEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="@string/password_hint"
+        android:ems="10"
+        android:layout_above="@id/LoginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/UserEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/user_name_hint"
+        android:ems="10"
+        android:layout_above="@id/PasswordEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"/>
+
 </RelativeLayout>
