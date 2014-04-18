@@ -33,7 +33,7 @@
         </activity>
 		
 		<!-- Login activity -->
-		<activity android:name=".LoginActivity" >
+		<activity android:name=".LoginActivity" />
 		
     </application>
 

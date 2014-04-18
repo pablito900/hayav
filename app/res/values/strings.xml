@@ -4,6 +4,8 @@
     <string name="app_name">hayav</string>
     <string name="hello">Hello hayav!</string>
     <string name="action_settings">Settings</string>
-    <string name="hello_world">remove me</string><string name="openlogin">Open Login</string>
+    <string name="hello_world">remove me</string>
+    <string name="open_login">Open Login</string>
+    <string name="login">Login</string>
 
 </resources>
