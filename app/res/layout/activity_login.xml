@@ -11,7 +11,19 @@
         android:background="@drawable/green"
         android:text="@string/login"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_alignLeft="@+id/UserEditText"
+        android:layout_alignRight="@+id/UserEditText"/>
+
+    <CheckBox
+        android:id="@+id/RememberMeCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/remember_me_checkbox"
+        android:layout_alignLeft="@+id/PasswordEditText"
+        android:layout_above="@id/LoginButton"
+        android:checked="true"
+        android:layout_marginBottom="10dp"/>
 
     <EditText
         android:id="@+id/PasswordEditText"
@@ -20,7 +32,7 @@
         android:inputType="textPassword"
         android:hint="@string/password_hint"
         android:ems="10"
-        android:layout_above="@id/LoginButton"
+        android:layout_above="@id/RememberMeCheckBox"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"/>
 

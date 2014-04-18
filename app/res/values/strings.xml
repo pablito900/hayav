@@ -9,5 +9,6 @@
     <string name="login">Login</string>
     <string name="user_name_hint">Username or E-mail</string>
     <string name="password_hint">Password</string>
+    <string name="remember_me_checkbox">Remember me</string>
 
 </resources>
