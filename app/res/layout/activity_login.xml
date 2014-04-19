@@ -13,7 +13,8 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_alignLeft="@+id/UserEditText"
-        android:layout_alignRight="@+id/UserEditText"/>
+        android:layout_alignRight="@+id/UserEditText"
+        android:onClick="onLoginButtonClick"/>
 
     <CheckBox
         android:id="@+id/RememberMeCheckBox"

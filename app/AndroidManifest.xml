@@ -34,7 +34,10 @@
 		
 		<!-- Login activity -->
 		<activity android:name=".LoginActivity" />
-		
+
+        <!-- Dashboard activity -->
+        <activity android:name=".DashboardActivity" />
+
     </application>
 
 </manifest>
