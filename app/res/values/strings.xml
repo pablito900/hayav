@@ -10,5 +10,7 @@
     <string name="user_name_hint">Username or E-mail</string>
     <string name="password_hint">Password</string>
     <string name="remember_me_checkbox">Remember me</string>
+    <string name="who_owes_me">Who Owes Me</string>
+    <string name="i_owe_to">I Owe To</string>
 
 </resources>

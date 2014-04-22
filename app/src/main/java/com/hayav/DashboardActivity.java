@@ -1,38 +1,60 @@
 package com.hayav;
 
-import android.app.Activity;
+import android.annotation.TargetApi;
+import android.app.ActionBar;
+import android.app.FragmentTransaction;
+import android.os.Build;
 import android.os.Bundle;
-import android.view.Menu;
-import android.widget.GridView;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.ViewPager;
 
-import java.util.ArrayList;
+import com.hayav.adapter.TabsPagerAdapter;
 
-public class DashboardActivity extends Activity {
+@TargetApi(Build.VERSION_CODES.HONEYCOMB)
+public class DashboardActivity extends FragmentActivity implements
+        ActionBar.TabListener {
 
-    ArrayList<Item> gridArray = new ArrayList<Item>();
-    DashboardGridViewAdapter dashboardGridViewAdapter;
+    private ViewPager viewPager;
+    private TabsPagerAdapter mAdapter;
+    private ActionBar actionBar;
 
-    public void onCreate(Bundle savedInstanceState) {
+    // Tab titles
+    private String[] tabs = { "Who Owes Me", "I Owe To" };
+
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        GridView gridView = (GridView) findViewById(R.id.GridView);
+        // Initialization
+        actionBar = getActionBar();
+        actionBar.setHomeButtonEnabled(false);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        gridArray.add(new Item("Person1","3 NIS"));
-        gridArray.add(new Item("Person2","Harry Potter Book"));
-        gridArray.add(new Item("Person3","5 NIS"));
-        gridArray.add(new Item("Person4","15 NIS"));
-        gridArray.add(new Item("Person5","5 NIS"));
-        gridArray.add(new Item("Person6","10 NIS"));
+        // Adding Tabs
+        for (String tab_name : tabs) {
+            actionBar.addTab(actionBar.newTab().setText(tab_name)
+                    .setTabListener(this));
+        }
 
-        dashboardGridViewAdapter = new DashboardGridViewAdapter(this, R.layout.dashboard_row_grid, gridArray);
-        gridView.setAdapter(dashboardGridViewAdapter);
+        viewPager = (ViewPager) findViewById(R.id.pager);
+        mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+        viewPager.setAdapter(mAdapter);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+
     }
 }
