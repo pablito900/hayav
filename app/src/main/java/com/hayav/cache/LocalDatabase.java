@@ -13,6 +13,7 @@ public class LocalDatabase {
 
     public LocalDatabase(Context context){
         dbHelper = new LocalDatabaseHelper(context);
+        dbHelper.getReadableDatabase();
     }
 
     //inner classes
@@ -43,7 +44,7 @@ public class LocalDatabase {
                     LoanColumns.COLUMN_NAME_DUE_DATE + TEXT_TYPE + COMMA_SEP +
                     LoanColumns.COLUMN_NAME_DESCRIPTION + TEXT_TYPE + COMMA_SEP +
                     LoanColumns.COLUMN_NAME_AMMOUNT + TEXT_TYPE + COMMA_SEP +
-                    LoanColumns.COLUMN_NAME_USER_ID + TEXT_TYPE + COMMA_SEP +
+                    LoanColumns.COLUMN_NAME_USER_ID + TEXT_TYPE  +
                     " )";
 
     private static final String SQL_CREATE_USERS =
@@ -51,7 +52,7 @@ public class LocalDatabase {
                     UserColumns._ID + " INTEGER PRIMARY KEY," +
                     UserColumns.COLUMN_NAME_NAME + TEXT_TYPE + COMMA_SEP +
                     UserColumns.COLUMN_NAME_EMAIL + TEXT_TYPE + COMMA_SEP +
-                    UserColumns.COLUMN_NAME_FACEBOOK_ID + TEXT_TYPE + COMMA_SEP +
+                    UserColumns.COLUMN_NAME_FACEBOOK_ID + TEXT_TYPE  +
                     " )";
 
     private static final String SQL_DELETE_LOANS =
